@@ -4,13 +4,13 @@
 pipeline {
     agent none
     stages {
-        /*stage('Check Goland syntax') {
+        stage('Check Goland syntax') {
             agent { docker { image 'cytopia/golint' } }
             steps {
                 sh 'golint  \${WORKSPACE}/fake-backend/config.go'
                 sh 'golint  \${WORKSPACE}/fake-backend/main.go'
             }
-        }*/
+        }
         stage('Check docker-compose syntax') {
             agent { docker { image 'docker/compose' } }
             steps {
