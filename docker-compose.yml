@@ -1,0 +1,39 @@
+version: '3'
+services:
+    battleIDBOOSTER:
+        hostname: "battleHostname"
+        image: "samiamr/fake-backend:ContinuousIntegration"
+        container_name: "battleContainerName"
+        volumes:
+            - ./sources/battleboat:/etc/backend/static
+        environment:
+            DATABASE_HOST: "dbBattleContainerName"
+            DATABASE_NAME: "battleboat"
+            DATABASE_USER: "battleuser"
+            DATABASE_PASSWORD: "battlepass"
+            DATABASE_PORT: "3306"
+        ports:
+            - 8181:3000
+        restart: "always"
+        networks:
+            - battleboat-network
+        depends_on:
+            - dbIDBOOSTER
+    dbIDBOOSTER:
+        hostname: "dbBattleHostname"
+        image: "mysql:5.7"
+        container_name: "dbBattleContainerName"
+        volumes:
+            - ./volumes/mysql_lib:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: "rootPassword"
+            MYSQL_DATABASE: "battleboat"
+            MYSQL_USER: "battleuser"
+            MYSQL_PASSWORD: "battlepass"
+        ports:
+            - 3306:3306
+        networks:
+            - battleboat-network
+        restart: "always"
+networks:
+    battleboat-network:
