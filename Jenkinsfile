@@ -7,8 +7,8 @@ pipeline {
         stage('Check Goland syntax') {
             agent { docker { image 'cytopia/golint' } }
             steps {
-                sh 'golint  \${WORKSPACE}/fake-backend/config.go'
-                sh 'golint  \${WORKSPACE}/fake-backend/main.go'
+                sh 'golint -set_exit_status \${WORKSPACE}/fake-backend/config.go'
+                sh 'golint -set_exit_status \${WORKSPACE}/fake-backend/main.go'
             }
         }
         stage('Check docker-compose syntax') {
