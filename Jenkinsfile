@@ -20,7 +20,7 @@ pipeline {
         stage('Check Dockerfile syntax') {
             agent { docker { image 'hadolint/hadolint' } }
             steps {
-                sh 'hadolint \${WORKSPACE}/fake-backend/Dockerfile'
+                sh 'hadolint \${WORKSPACE}/Dockerfile'
             }
         }
     }
