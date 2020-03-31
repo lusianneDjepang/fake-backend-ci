@@ -5,7 +5,7 @@ pipeline {
     agent none
     stages {
         stage('Check Goland syntax') {
-            agent { docker { image 'golangci/golangci-lint' } }
+            agent { docker { image 'korjavin/golangci-lint' } }
             steps {
                 sh 'cat \${WORKSPACE}/fake-backend/config.go'
                 /*sh 'golangci-lint run \${WORKSPACE}/fake-backend/config.go'*/
