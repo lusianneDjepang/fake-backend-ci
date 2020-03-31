@@ -8,8 +8,8 @@ pipeline {
             agent { docker { image 'korjavin/golangci-lint' } }
             steps {
                 sh 'cat \${WORKSPACE}/fake-backend/config.go'
-                /*sh 'golangci-lint run \${WORKSPACE}/fake-backend/config.go'*/
-               sh 'golangci-lint run  fake-backend/'
+                sh 'golangci-lint run \${WORKSPACE}/fake-backend/config.go'
+               /*sh 'golangci-lint run  fake-backend/'*/
                  /* sh 'golangci-lint run \${WORKSPACE}/fake-backend/main.jjbjvkvhvgo'*/
             }
         }
