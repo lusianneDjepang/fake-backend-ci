@@ -4,7 +4,7 @@
 pipeline {
     agent none
     stages {
-        stage('Check Goland syntax') {
+        /*stage('Check Goland syntax') {
             agent { docker { image 'golangci/golangci-lint' } }
             steps {
                 sh 'cat \${WORKSPACE}/fake-backend/config.go'
@@ -12,7 +12,7 @@ pipeline {
                /*sh 'golangci-lint run  fake-backend/'dddddd*/
                  /* sh 'golangci-lint run \${WORKSPACE}/fake-backend/main.jjbjvkvhvgo'*/
             }
-        }
+        }*/
         stage('Check docker-compose syntax') {
             agent { docker { image 'docker/compose' } }
             steps {
