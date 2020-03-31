@@ -9,8 +9,6 @@ pipeline {
             steps {
                 sh 'cat \${WORKSPACE}/fake-backend/config.go'
                 sh 'golangci-lint run \${WORKSPACE}/fake-backend/config.go'
-               /*sh 'golangci-lint run  fake-backend/'dddddd*/
-                 /* sh 'golangci-lint run \${WORKSPACE}/fake-backend/main.jjbjvkvhvgo'*/
             }
         }*/
         stage('Check docker-compose syntax') {
