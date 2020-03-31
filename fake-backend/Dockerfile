@@ -10,7 +10,7 @@ COPY . ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
 ARG test1
-From ${test1} AS 0
+FROM ${test1} AS 0
 
 # Final stage:
 FROM alpine:3.11.5 
