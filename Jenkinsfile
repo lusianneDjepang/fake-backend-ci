@@ -5,10 +5,10 @@ pipeline {
     agent none
     stages {
         stage('Check Goland syntax') {
-            agent { docker { image 'cytopia/golint' } }
+            agent { docker { image 'golangci/golangci-lint' } }
             steps {
-                sh 'golint \${WORKSPACE}/fake-backend/config.go'
-                sh 'golint \${WORKSPACE}/fake-backend/main.go'
+                sh 'golangci-lint run \${WORKSPACE}/fake-backend/config.go'
+                sh 'golangci-lint run \${WORKSPACE}/fake-backend/main.go'
             }
         }
         stage('Check docker-compose syntax') {
