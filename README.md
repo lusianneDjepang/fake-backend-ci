@@ -2,4 +2,10 @@
 
 [![Build Status](http://ec2-34-226-201-74.compute-1.amazonaws.com/buildStatus/icon?job=Sona-facke-back-end-complette)](http://ec2-34-226-201-74.compute-1.amazonaws.com/job/Sona-facke-back-end-complette/)
 
-Test//kmjjvhhvhvhvv/////This repos is a simple application front-end (battleboat) with is backend (fake-backend) whose is a MySQL Database.jjjjjkfhcuhcvhvkvjkjvjv.
+## Description
+
+* This is a pipeline CI with a GitLab instance to ensure the synatxe is OK
+* It's verified by differents linter (GO, Dockerfile)
+
+
+by Lusianne DJEPANG (lusiannedjepang@gmail.com)
